@@ -4,14 +4,16 @@ import { validateCar } from '../middleware/validateCar.js';
 
 const router = express.Router();
 
-router.get('/', veiculoController.listarVeiculos);
+router.get('/list', veiculoController.listarVeiculos);
 
-router.get('/:id', veiculoController.buscarVeiculoPorId);
+router.get('/id', veiculoController.novoId);
 
-router.post('/', veiculoController.criarVeiculo);
+router.get('/search/:id', veiculoController.buscarVeiculoPorId);
 
-router.put('/:id', veiculoController.atualizarVeiculo);
+router.post('/create', veiculoController.criarVeiculo);
 
-router.delete('/:id', veiculoController.deletarVeiculo);
+router.put('/update/:id', veiculoController.atualizarVeiculo);
+
+router.delete('/delete/:id', veiculoController.deletarVeiculo);
 
 export default router;
